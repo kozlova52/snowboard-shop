@@ -1,0 +1,72 @@
+body {
+    background-color: rgba(255, 240, 245, 0.845);
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    background-color:  #d96c8d;
+    border-radius: 10px;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 25px;
+    display: inline-block;
+}
+
+.product-section-title {
+    color: black;
+    font-size: 18px;
+    background-color: rgba(209, 58, 146, 0.406);
+    padding: 8px 15px;
+    border-left: 5px solid #eb1cbe;
+}
+
+.short-description {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-style: italic;
+    background-color: rgba(202, 125, 155, 0.299);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.full-description {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #d23da02a;
+    padding: 15px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    padding: 10px 0 10px 40px;
+    background-image: url('images/marker.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 25px 25px;
+    border-bottom: 1px dashed #ccc;
+}
+
+img {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 10px;
+}
