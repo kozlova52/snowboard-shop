@@ -1,5 +1,9 @@
 // массив корзины
 let cart = [];
+const savedCart = localStorage.getItem("cart");
+if (savedCart) {
+    cart = JSON.parse(savedCart);
+}
 
 // элементы
 const buttons = document.querySelectorAll(".add-btn");
@@ -9,7 +13,9 @@ const clearBtn = document.querySelector("#clear-cart");
 const payBtn = document.querySelector("#pay");
 const filter = document.querySelector("#filter");
 const products = document.querySelectorAll(".product");
-
+const saveCartToStorage = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
 // добавление товара
 buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -21,6 +27,7 @@ buttons.forEach(button => {
         };
 
         cart.push(item);
+        saveCartToStorage();
         renderCart();
     });
 });
@@ -39,6 +46,7 @@ const renderCart = () => {
 
         removeBtn.addEventListener("click", () => {
             cart.splice(index, 1);
+            saveCartToStorage();
             renderCart();
         });
 
@@ -61,6 +69,7 @@ const updateTotal = () => {
 // очистка корзины
 clearBtn.addEventListener("click", () => {
     cart = [];
+    saveCartToStorage();
     renderCart();
 });
 
@@ -71,6 +80,7 @@ payBtn.addEventListener("click", () => {
     } else {
         alert("Покупка прошла успешно!");
         cart = [];
+        saveCartToStorage();
         renderCart();
     }
 });
@@ -81,9 +91,10 @@ filter.addEventListener("change", () => {
 
     products.forEach(product => {
         if (category === "all" || product.dataset.category === category) {
-            product.style.display = "block";
+            product.style.display = "inline-block";
         } else {
             product.style.display = "none";
         }
     });
 });
+renderCart();
